@@ -16,7 +16,7 @@ class ConnectFour():
                 self.board[row][column] == self.turn
                 return self.board
     
-    def checking(self,row,column):
+    def checking(self):
         if self.check_draw() == 3:
             self.check_draw()
         if self.horizontal() != 0:
@@ -113,8 +113,7 @@ class ConnectFour():
                     return 0
         return 0
 
-    
-    def check_draw(self,row,column):
-        if not any (self.board[row][column] == 0):
+    def check_draw(self):
+        if not any(' ' in _ for _ in self.board):
             return 3
         return 0
